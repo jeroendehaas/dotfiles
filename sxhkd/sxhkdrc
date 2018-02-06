@@ -1,0 +1,35 @@
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume 0 {+,-}5%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+super + alt + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+super + shift + e
+	bspc quit
+
+super + {1-9,0}
+	bspc desktop -f {I,II,III,IV,V,VI,VII,VIII,IX,X}
+
+super + Return
+	urxvt
+
+super + q
+	bspc node focused -c	
+
+super + space
+	rofi -show run
+
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+super + alt + i
+	urxvt -name irssi -e irssi

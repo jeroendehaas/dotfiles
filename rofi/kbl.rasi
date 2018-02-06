@@ -1,0 +1,117 @@
+/**
+ * A floating box version of the paper theme.
+ *
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+* {
+    grey:  #eeeeee;
+
+    bg: #282A36AA;
+    fg: #F8F8F200;
+
+    spacing: 2;
+    background-color: #282A36AA;
+    border-color: #e80cb5FF;
+    anchor: north;
+    location: center;
+}
+#window {
+    transparency: "screenshot";
+    border: 0;
+    padding: 0% 0% 0% 0%;
+    x-offset: 0;
+    /*y-offset: -10%;*/
+}
+#mainbox {
+    padding: 0px;
+    border: 0;
+    spacing: 1%;
+}
+#message {
+    border: 2px; 
+    padding: 1em; 
+    background-color: @bg; 
+    text-color: @fg;
+}
+#textbox normal {
+    text-color: @fg;
+    padding: 0;
+    border: 0;
+}
+#listview {
+    fixed-height: 1;
+    border: 2px;
+    padding: 1em;
+    reverse: false;
+
+    columns: 1;
+    background-color: @bg; 
+}
+#element {
+    border: 0;
+    padding: 2px;
+    highlight: bold ;
+}
+#element normal.normal {
+    text-color: #002B36FF;
+    background-color: #F5F5F500;
+}
+#element normal.urgent {
+    text-color: #D75F00FF;
+    background-color: #F5F5F5FF;
+}
+#element normal.active {
+    text-color: #005F87FF;
+    background-color: #F5F5F5FF;
+}
+#element selected.normal {
+    text-color: #F5F5F5FF;
+    background-color: #4271AEFF;
+}
+#element selected.urgent {
+    text-color: #F5F5F5FF;
+    background-color: #D75F00FF;
+}
+#element selected.active {
+    text-color: #F5F5F5FF;
+    background-color: #005F87FF;
+}
+#element alternate.normal {
+    text-color: #002B36FF;
+    background-color: #D0D0D0FF;
+}
+#element alternate.urgent {
+    text-color: #D75F00FF;
+    background-color: #D0D0D0FF;
+}
+#element alternate.active {
+    text-color: #005F87FF;
+    background-color: #D0D0D0FF;
+}
+#scrollbar {
+    border: 0;
+    padding: 0;
+}
+#inputbar {
+    spacing: 0;
+    border: 2px;
+    padding: 0.5em 1em;
+    background-color: @bg;
+    text-color: @fg;
+    index: 0;
+}
+#inputbar normal {
+    foreground-color: @fg;
+    background-color: @bg;
+}
+
+#sidebar {
+    border: 2px;
+    padding: 0.5em 1em;
+    background-color: @bg;
+    index: 10;
+}
+#button selected {
+    text-color: #4271AEFF;
+}

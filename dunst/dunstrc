@@ -1,0 +1,24 @@
+[global]
+	geometry="300x20-30+50"
+	transparency = 20
+	separator_height = 5
+	padding = 8
+	frame_width = 2
+	frame_color = "#e80cb5"
+	# sort messages by urgency 
+	sort = yes
+
+	font = Iosevka 10
+	icon_position = left
+	max_icon_size = 48
+
+[urgency_normal]
+	background = "#282A36"
+	foreground = "#F8F8F2"
+	timeout = 10
+
+[urgency_critical]
+	background = "#FF79C6"
+	foreground = "#282A36"
+	frame_color = "#FF5555"
+	timeout = 10
