@@ -1,2 +1,4 @@
 kitty/cached.json
 *.swp
+xmonad/*
+!xmonad/xmonad.hs
