@@ -2,3 +2,6 @@ kitty/cached.json
 *.swp
 xmonad/*
 !xmonad/xmonad.hs
+taffybar/*
+!taffybar/taffybar.hs
+!taffybar/taffybar.rc
