@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Config.Desktop
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Circle
@@ -43,17 +44,22 @@ myLayout = onWorkspace (toWorkspaceId ChatWorkspace) Circle .
            onWorkspace (toWorkspaceId MusicWorkspace) Circle .
            layoutHook $ def
 
+myManageHook = composeAll [ appName =? "irssi" --> doShift "chat"
+                          , appName =? "vimpc" --> doFloat
+                          , appName =? "vimpc" --> doShift "music"]
+
 main :: IO ()
-main = xmonad . ewmh . fullscreenSupport $ def { layoutHook = avoidStruts . smartSpacingWithEdge 5 $ myLayout
-                                               , workspaces = map toWorkspaceId $ myWorkspaces
-                                               , terminal = "kitty"
-                                               , borderWidth = 2
-                                               , focusedBorderColor = focusedColor
-                                               , normalBorderColor = bgColor
-                                               , manageHook = manageHook def <+> manageDocks
-                                               , modMask = myModMask
-                                               , startupHook = spawn "/home/jeroen/.config/polybar/launch.sh"
-                                               --, startupHook = spawn "xfce4-panel"
-                                               } `additionalKeys` [ ((myModMask, xK_b), sendMessage ToggleStruts)
-                                                                  ]
+main = xmonad . fullscreenSupport $ desktopConfig { layoutHook = avoidStruts . smartSpacingWithEdge 5 $ myLayout
+                                                         , workspaces = map toWorkspaceId $ myWorkspaces
+                                                         , terminal = "kitty"
+                                                         , borderWidth = 2
+                                                         , focusedBorderColor = focusedColor
+                                                         , normalBorderColor = bgColor
+                                                         , manageHook = myManageHook <+> manageHook desktopConfig
+                                                         , modMask = myModMask
+                                                         , startupHook = docksStartupHook <+> spawn "/usr/bin/taffybar" <+> startupHook desktopConfig
+							 , handleEventHook = docksEventHook <+> handleEventHook desktopConfig
+                                                         } `additionalKeys` [ ((myModMask, xK_b), sendMessage ToggleStruts)
+					                                    , ((myModMask, xK_space), spawn "rofi -show run")
+                                                                            ]
                                                 
