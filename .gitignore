@@ -5,3 +5,6 @@ xmonad/*
 taffybar/*
 !taffybar/taffybar.hs
 !taffybar/taffybar.rc
+emacs/*
+!emacs/.init.d/*
+!emacs/*el

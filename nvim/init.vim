@@ -12,10 +12,13 @@ Plug 'neomake/neomake'
 Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'dracula/vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tweekmonster/deoplete-clang2'
+Plug 'embear/vim-localvimrc'
 call plug#end()
 
-colorscheme github
-let g:airline_theme='cobalt2'
+"colorscheme github
+"let g:airline_theme='cobalt2'
 " Sensible defaults
 set hidden
 set et ts=4 sts=4 sw=4
